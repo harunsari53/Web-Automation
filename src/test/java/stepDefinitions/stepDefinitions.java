@@ -40,6 +40,18 @@ public class stepDefinitions {
         logger.info("This is an info message");
     }
 
+    @When("user click to Ürünler")
+    public  void userClickUrunler() {
+        WebElement products = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='menu-item-title' and contains(., 'Ürünler')]")));
+        products.click();
+    }
+
+    @And("user click to RestoPay")
+    public void userClickRestoPay() {
+        WebElement restoPay = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='post-wrapper' and contains(., 'RestoPay')]")));
+        restoPay.click();
+    }
+
     @When("user click to Kullanım Noktaları")
     public void userSearchesFor() {
         WebElement kullanimNoktalari = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"menu-item-2426\"]")));
